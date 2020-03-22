@@ -17,6 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -36,6 +39,9 @@ public class Order implements Serializable {
 	@Column(name = "ID")
 	private int id;
 
+	@NotNull
+	@NotEmpty
+	@Pattern(regexp=".+@.+\\..+", message="Please provide a valid email address")
 	@Column(name = "EMAIL")
 	private String email;
 

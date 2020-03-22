@@ -69,9 +69,7 @@ Request
 	"productOrder":[{ 
 		"quantity":2,
 		"id":1
-	
-		}
-	]
+	}]
 }
 
 Response
