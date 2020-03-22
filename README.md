@@ -11,7 +11,7 @@ All APIs:-
 
 1. GET all Product API
 
-GET - http://localhost:8080/getAllProduct
+GET - http://localhost:8080/api/getAllProduct
 
 Response
 
@@ -29,7 +29,7 @@ Response
 
 2.  Create Product API
 
-POST - http://localhost:8080/createProduct
+POST - http://localhost:8080/api/createProduct
 
 Request - application/json
 {
@@ -51,7 +51,7 @@ Repsonse
 
 3. Update Product API
 
-PUT - http://localhost:8080/updateProduct/1
+PUT - http://localhost:8080/api/updateProduct/1
 
 Request - application/json
 
@@ -73,7 +73,7 @@ Repsonse
 
 4. Product Soft Delete
 
-Delete - http://localhost:8080/deleteProduct/2
+Delete - http://localhost:8080/api/deleteProduct/2
 
 Repsonse
 
@@ -85,7 +85,7 @@ Repsonse
 
 5. Create Order
 
-Post - http://localhost:8080/createOrder
+Post - http://localhost:8080/api/createOrder
 
 Request
 
@@ -117,7 +117,7 @@ Response
 
 6. Get Order based on date
 
-GET - http://localhost:8080/getOrder?fromDate=2020-03-22&toDate=2020-03-22
+GET - http://localhost:8080/api/getOrder?fromDate=2020-03-22&toDate=2020-03-22
 
 Response
 
