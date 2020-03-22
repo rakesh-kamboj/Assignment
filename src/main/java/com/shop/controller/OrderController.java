@@ -3,7 +3,6 @@ package com.shop.controller;
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -15,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +27,7 @@ import com.shop.service.OrderService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@RequestMapping("/api")
 public class OrderController {
 
 	@Autowired
@@ -46,7 +47,7 @@ public class OrderController {
 	 */
 	@PostMapping(path = "/createOrder", produces = "application/json")
 	@ApiOperation(value = "Create Order", notes = "Return created order", response = Order.class)
-	public ResponseEntity<?> createProduct(@RequestBody OrderDto orderDto) {
+	public ResponseEntity<?> createOrder(@RequestBody OrderDto orderDto) {
 		Order order = orderService.save(orderDto);
 		return new ResponseEntity<>(order, HttpStatus.OK);
 	}

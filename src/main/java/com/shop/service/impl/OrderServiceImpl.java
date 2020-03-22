@@ -66,7 +66,6 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Map<String, Object> getOrder(Date fromDate, Date toDate) {
 		List<Order> list = orderRepository.getOrder(fromDate, toDate);
-
 		Map<String, Object> map = getOrderData(list);
 
 		if (list.isEmpty()) {
@@ -77,15 +76,22 @@ public class OrderServiceImpl implements OrderService {
 
 	private Map<String, Object> getOrderData(List<Order> list) {		
 		Map<String, Object> map = new HashMap<String, Object>();		
-				
+		List<Object> outerList=new ArrayList<>();
+		Map<Object, Object> mapOrder=new HashMap<>();		
 		int totalPrice = 0;
+		
 		for(Order order:list) {			
 			for(OrdersDetails orderDetails : order.getOrdersDetails()) {
-				totalPrice  += Integer.valueOf(orderDetails.getPrice().intValue()) + Integer.valueOf(orderDetails.getQuantity());
-			}		
+				totalPrice  += Integer.valueOf(orderDetails.getPrice().intValue()) * Integer.valueOf(orderDetails.getQuantity());
+			}
+
+			mapOrder=new HashMap<>();
+			mapOrder.put("order_"+order.getid(), order);
+			mapOrder.put("totalPrice", totalPrice);
+			outerList.add(mapOrder);
+			totalPrice = 0;
 		}
-		map.put("data", list);
-		map.put("totalPrice", totalPrice);
+		map.put("data", outerList);
 		return map;
 	}
 }
