@@ -12,6 +12,7 @@ All APIs:-
 http://localhost:8080/getAllProduct
 
 Response
+
 [
     {
         "productId": 1,
@@ -51,7 +52,8 @@ Request - application/json
         "name": "Indian"
 }
 
-repsonse
+Repsonse
+
 {
     "productId": 1,
     "price": 1922,
@@ -65,6 +67,7 @@ repsonse
 http://localhost:8080/deleteProduct/2
 
 Repsonse
+
 {
     "message": "Product is deleted."
 }
@@ -74,6 +77,7 @@ Repsonse
 http://localhost:8080/createOrder
 
 Request
+
 {
 	"email":"rakesh@gmail.com",
 	"productOrder":[{ 
@@ -83,6 +87,7 @@ Request
 }
 
 Response
+
 {
     "id": 2,
     "email": "rakesh@gmail.com",
@@ -103,34 +108,52 @@ Response
 http://localhost:8080/getOrder?fromDate=2020-03-22&toDate=2020-03-22
 
 Response
+
 {
     "data": [
         {
-            "id": 1,
-            "email": "rakesh@gmail.com",
-            "createdDate": "2020-03-22",
-            "ordersDetails": [
-                {
-                    "id": 1,
-                    "quantity": 2,
-                    "price": 1922.00,
-                    "productId": 1
-                }
-            ]
+            "totalPrice": 30002,
+            "order_1": {
+                "id": 1,
+                "email": "vikki@gmail.com",
+                "createdDate": "2020-03-22",
+                "ordersDetails": [
+                    {
+                        "id": 1,
+                        "quantity": 3,
+                        "price": 10000.00,
+                        "productId": 4
+                    },
+                    {
+                        "id": 2,
+                        "quantity": 2,
+                        "price": 1.00,
+                        "productId": 3
+                    }
+                ]
+            }
         },
         {
-            "id": 2,
-            "email": "rakesh@gmail.com",
-            "createdDate": "2020-03-22",
-            "ordersDetails": [
-                {
-                    "id": 2,
-                    "quantity": 2,
-                    "price": 1922.00,
-                    "productId": 1
-                }
-            ]
+            "totalPrice": 2003,
+            "order_2": {
+                "id": 2,
+                "email": "vikki@gmail.com",
+                "createdDate": "2020-03-22",
+                "ordersDetails": [
+                    {
+                        "id": 3,
+                        "quantity": 3,
+                        "price": 1.00,
+                        "productId": 2
+                    },
+                    {
+                        "id": 4,
+                        "quantity": 2,
+                        "price": 1000.00,
+                        "productId": 1
+                    }
+                ]
+            }
         }
-    ],
-    "totalPrice": 3848
+    ]
 }
