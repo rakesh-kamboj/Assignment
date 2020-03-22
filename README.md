@@ -1,4 +1,13 @@
-GET
+Home Assignment
+
+Application Specification : Created a RESTful application using Java and Spring Boot.
+
+Swagger link - http://localhost:8080/swagger-ui.html
+
+Database - http://localhost:8080/h2
+
+
+1. GET API
 http://localhost:8080/getAllProduct
 
 Response
@@ -12,7 +21,7 @@ Response
     }
 ]
 
-POST
+2. POST API
 http://localhost:8080/createProduct
 
 Request - application/json
@@ -31,7 +40,7 @@ Repsonse
     "createdDate": "2020-03-22T12:07:23.063+0000"
 }
 
-PUT
+3. PUT API
 http://localhost:8080/updateProduct/1
 
 Request - application/json
@@ -51,7 +60,7 @@ repsonse
 }
 
 
-Delete
+4.Delete API
 http://localhost:8080/deleteProduct/2
 
 Repsonse
@@ -60,7 +69,7 @@ Repsonse
 }
 
 
-Post
+5. Post API
 http://localhost:8080/createOrder
 
 Request
@@ -88,8 +97,7 @@ Response
 }
 
 
-GET
-
+6. GET API
 
 http://localhost:8080/getOrder?fromDate=2020-03-22&toDate=2020-03-22
 
