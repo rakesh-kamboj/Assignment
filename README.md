@@ -1,15 +1,17 @@
 Home Assignment
 ---------------------------------------------------------------------------------------------------------------------------
-Application Specification : Created a RESTful application using Java and Spring Boot.
+Application Specification : Created a RESTful application using Java and Spring Boot. Run application on localhost and use below link.
 ---------------------------------------------------------------------------------------------------------------------------
 Swagger link - http://localhost:8080/swagger-ui.html
 ---------------------------------------------------------------------------------------------------------------------------
 Database - http://localhost:8080/h2
 ---------------------------------------------------------------------------------------------------------------------------
+
 All APIs:-
 
-1. GET API
-http://localhost:8080/getAllProduct
+1. GET all Product API
+
+GET - http://localhost:8080/getAllProduct
 
 Response
 
@@ -23,8 +25,11 @@ Response
     }
 ]
 
-2. POST API
-http://localhost:8080/createProduct
+--------------------------------------------------------------------------------
+
+2.  Create Product API
+
+POST - http://localhost:8080/createProduct
 
 Request - application/json
 {
@@ -42,8 +47,11 @@ Repsonse
     "createdDate": "2020-03-22T12:07:23.063+0000"
 }
 
-3. PUT API
-http://localhost:8080/updateProduct/1
+--------------------------------------------------------------------------------
+
+3. Update Product API
+
+PUT - http://localhost:8080/updateProduct/1
 
 Request - application/json
 
@@ -63,8 +71,9 @@ Repsonse
 }
 
 
-4.Delete API
-http://localhost:8080/deleteProduct/2
+4. Product Soft Delete
+
+Delete - http://localhost:8080/deleteProduct/2
 
 Repsonse
 
@@ -72,9 +81,11 @@ Repsonse
     "message": "Product is deleted."
 }
 
+--------------------------------------------------------------------------------
 
-5. Post API
-http://localhost:8080/createOrder
+5. Create Order
+
+Post - http://localhost:8080/createOrder
 
 Request
 
@@ -102,10 +113,11 @@ Response
     ]
 }
 
+--------------------------------------------------------------------------------
 
-6. GET API
+6. Get Order based on date
 
-http://localhost:8080/getOrder?fromDate=2020-03-22&toDate=2020-03-22
+GET - http://localhost:8080/getOrder?fromDate=2020-03-22&toDate=2020-03-22
 
 Response
 
